@@ -1,7 +1,12 @@
 package com.pinhobrunodev.attendancems.frameworks.adapters.outbound.persistence.user;
 
 import com.pinhobrunodev.attendancems.frameworks.adapters.outbound.entities.UserEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface UserMongoRepository extends CrudRepository<UserEntity,String> {
+import java.util.Optional;
+import java.util.UUID;
+
+public interface UserMongoRepository extends MongoRepository<UserEntity,String> {
+
+    Optional<UserEntity> findByUserId(UUID userId);
 }

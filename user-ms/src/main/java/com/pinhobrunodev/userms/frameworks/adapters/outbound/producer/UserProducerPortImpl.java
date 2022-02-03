@@ -1,5 +1,6 @@
 package com.pinhobrunodev.userms.frameworks.adapters.outbound.producer;
 
+import com.google.gson.Gson;
 import com.pinhobrunodev.userms.application.domain.UserDomain;
 import com.pinhobrunodev.userms.application.ports.UserProducerPort;
 import com.pinhobrunodev.userms.frameworks.adapters.dto.UserEvent;
@@ -7,8 +8,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.core.RoutingKafkaTemplate;
-import com.google.gson.Gson;
 import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
