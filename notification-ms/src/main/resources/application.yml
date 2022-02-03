@@ -1,0 +1,32 @@
+server:
+  port: 8083
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: notification-consumer
+  rabbitmq:
+    addresses: amqps://ixphukrf:yVuA4fqIHVmLt2-hPvHJCWVakylGPaRz@baboon.rmq.cloudamqp.com/ixphukrf
+  redis:
+    host: localhost
+    port: 6378
+    password: 123
+
+topic:
+  name:
+    consumer: attendance-topic
+
+notification:
+  broker:
+    exchange:
+      notificationCommandExchange: notificationcommand
+    key:
+      notificationCommandKey: ms.notification
+logging:
+  level:
+    com.pinhobrunodev: TRACE
+    root: INFO # More details but not of Everything
+    org.springframework.web: DEBUG # Log to see into the Requests
+    org.hibernate: INFO  # Log to see the Hibernate
