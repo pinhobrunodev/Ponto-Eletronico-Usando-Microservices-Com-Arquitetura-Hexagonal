@@ -1,8 +1,8 @@
 package com.pinhobrunodev.attendancems.application.services;
 
 import com.pinhobrunodev.attendancems.application.domains.UserDomain;
-import com.pinhobrunodev.attendancems.application.ports.UserPersistencePort;
-import com.pinhobrunodev.attendancems.application.ports.UserServicePort;
+import com.pinhobrunodev.attendancems.application.ports.user.UserPersistencePort;
+import com.pinhobrunodev.attendancems.application.ports.user.UserServicePort;
 
 public class UserServicePortImpl implements UserServicePort {
 

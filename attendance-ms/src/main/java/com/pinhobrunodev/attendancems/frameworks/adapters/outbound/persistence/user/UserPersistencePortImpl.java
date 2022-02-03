@@ -1,8 +1,9 @@
-package com.pinhobrunodev.attendancems.frameworks.adapters.outbound.persistence;
+package com.pinhobrunodev.attendancems.frameworks.adapters.outbound.persistence.user;
 
 import com.pinhobrunodev.attendancems.application.domains.UserDomain;
-import com.pinhobrunodev.attendancems.application.ports.UserPersistencePort;
+import com.pinhobrunodev.attendancems.application.ports.user.UserPersistencePort;
 import com.pinhobrunodev.attendancems.frameworks.adapters.outbound.entities.UserEntity;
+import com.pinhobrunodev.attendancems.frameworks.adapters.outbound.persistence.user.UserMongoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

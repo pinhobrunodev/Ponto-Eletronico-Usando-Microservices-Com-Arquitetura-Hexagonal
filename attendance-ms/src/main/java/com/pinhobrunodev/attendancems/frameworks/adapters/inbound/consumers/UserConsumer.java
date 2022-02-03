@@ -2,10 +2,9 @@ package com.pinhobrunodev.attendancems.frameworks.adapters.inbound.consumers;
 
 import com.google.gson.Gson;
 import com.pinhobrunodev.attendancems.application.domains.UserDomain;
-import com.pinhobrunodev.attendancems.application.ports.UserServicePort;
+import com.pinhobrunodev.attendancems.application.ports.user.UserServicePort;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.modelmapper.ModelMapper;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 

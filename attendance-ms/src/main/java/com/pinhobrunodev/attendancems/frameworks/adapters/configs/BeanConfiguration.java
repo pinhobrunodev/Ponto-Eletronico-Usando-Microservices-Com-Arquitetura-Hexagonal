@@ -1,7 +1,7 @@
 package com.pinhobrunodev.attendancems.frameworks.adapters.configs;
 
 import com.pinhobrunodev.attendancems.AttendanceMsApplication;
-import com.pinhobrunodev.attendancems.application.ports.UserPersistencePort;
+import com.pinhobrunodev.attendancems.application.ports.user.UserPersistencePort;
 import com.pinhobrunodev.attendancems.application.services.UserServicePortImpl;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
