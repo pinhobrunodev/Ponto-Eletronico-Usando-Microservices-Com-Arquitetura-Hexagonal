@@ -1,34 +1,25 @@
 server:
-  port: 8081
+  port: 8082
+
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5434/user-db
-    username: postgres
-    password: 123
-  jpa:
-    hibernate:
-      ddl-auto: update
-      dialect: org.hibernate.dialect.PostgreSQLDialect
-      jdbc:
-        lob.non-contextual-creation:true
-    properties:
-      hibernate:
-        show_sql: true
-    output:
-      ansi:
-        enabled: always
+  data:
+    mongodb:
+      uri: mongodb://pinhobrunodev:123@localhost:27017/attendance-db?authSource=admin
   kafka:
     bootstrap-servers: localhost:29092
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: user-consumer
 
 topic:
   name:
-    producer: user-topic
+    consumer: user-topic
+    producer: attendance-topic
 
 
-  # Log Level of Application
 logging:
   level:
     com.pinhobrunodev: TRACE

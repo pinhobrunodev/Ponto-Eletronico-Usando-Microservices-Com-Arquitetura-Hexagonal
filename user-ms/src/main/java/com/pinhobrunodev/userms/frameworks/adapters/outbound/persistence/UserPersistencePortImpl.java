@@ -28,7 +28,7 @@ public class UserPersistencePortImpl implements UserPersistencePort {
     public UserDomain save(UserDomain userDomain) {
         var userEntity = modelMapper.map(userDomain, UserEntity.class);
         userJpaRepository.save(userEntity);
-        userProducerPort.producerUserEventAndSend(userDomain);
+        userProducerPort.producerUserEventAndSend(modelMapper.map(userEntity,UserDomain.class));
         log.info("User for Register payload : {}",userEntity);
         return modelMapper.map(userEntity, UserDomain.class);
     }
