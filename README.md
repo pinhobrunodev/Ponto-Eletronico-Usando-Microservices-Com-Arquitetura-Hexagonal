@@ -41,14 +41,14 @@ Foram utilizados soluções de consumo e publicação de mensagens em broker de 
 ### Notification Microservice :
 
 
-![Notification-Hexagonal-Architecture](https://user-images.githubusercontent.com/60756219/152538827-0f4e8bf1-d9f5-4cb3-ace5-32ee5bf490c6.png)
+![not](https://user-images.githubusercontent.com/60756219/152558567-1e3cb912-cd82-4b7d-a103-60f6077d9c8b.png)
 
 
 
 ### Email Microservice :
 
 
-![Email-Hexagonal-Architecture](https://user-images.githubusercontent.com/60756219/152538856-e68191c0-629e-411e-a084-8385060d4cef.png)
+![email](https://user-images.githubusercontent.com/60756219/152558564-ef51d561-0911-4f15-a5a9-858cef623263.png)
 
 
  #
