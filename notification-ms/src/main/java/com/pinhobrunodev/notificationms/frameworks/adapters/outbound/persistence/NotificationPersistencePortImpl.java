@@ -8,9 +8,13 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
+import java.time.format.DateTimeFormatter;
+
 @Slf4j
 @Component
 public class NotificationPersistencePortImpl implements NotificationPersistencePort {
+
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
 
     final ModelMapper modelMapper;
@@ -26,7 +30,7 @@ public class NotificationPersistencePortImpl implements NotificationPersistenceP
     @Override
     public void save(NotificationDomain notificationDomain) {
         var notificationEntity = modelMapper.map(notificationDomain, NotificationEntity.class);
-        notificationEntity.setMessage("Olá " + notificationEntity.getFullName() + ", você bateu o ponto no seguinte dia/horário: " + notificationEntity.getAttendanceAt());
+        notificationEntity.setMessage("Olá " + notificationEntity.getFullName() + ", você bateu o ponto no seguinte dia/horário: " + notificationEntity.getAttendanceAt().format(formatter));
         notificationRedisRepository.save(notificationEntity);
         log.info("Notification Persisted : {}",notificationEntity);
         notificationProducerPort.producerNotificationEventAndSend(modelMapper.map(notificationEntity,NotificationDomain.class));

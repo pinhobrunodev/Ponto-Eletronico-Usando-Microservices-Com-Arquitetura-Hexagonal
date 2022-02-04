@@ -1,16 +1,11 @@
 package com.pinhobrunodev.notificationms.frameworks.adapters.outbound.producer;
 
-import com.google.gson.Gson;
 import com.pinhobrunodev.notificationms.application.domain.NotificationDomain;
 import com.pinhobrunodev.notificationms.application.ports.NotificationProducerPort;
-import com.pinhobrunodev.notificationms.frameworks.adapters.dto.NotificationEventDto;
+import com.pinhobrunodev.notificationms.frameworks.adapters.dto.NotificationCommandDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.core.ExchangeTypes;
-import org.springframework.amqp.rabbit.annotation.Exchange;
-import org.springframework.amqp.rabbit.annotation.Queue;
-import org.springframework.amqp.rabbit.annotation.QueueBinding;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.modelmapper.ModelMapper;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,17 +24,12 @@ public class NotificationProducerPortImpl implements NotificationProducerPort {
     @Value(value = "${notification.broker.key.notificationCommandKey}")
     private String notificationCommandKey;
 
+    final ModelMapper modelMapper;
 
     @Override
     public void producerNotificationEventAndSend(NotificationDomain notificationDomain) {
-        final Gson gson = new Gson();
-        var notificationEvent = NotificationEventDto.builder()
-                .userId(notificationDomain.getUserId())
-                .fullName(notificationDomain.getFullName())
-                .email(notificationDomain.getEmail())
-                .message(notificationDomain.getMessage())
-                .attendanceAt(notificationDomain.getAttendanceAt());
-        log.info("Message sent payload : {}", notificationEvent);
-        rabbitTemplate.convertAndSend(notificationCommandExchange, notificationCommandKey, gson.toJson(notificationEvent));
+        var notificationCommandDto = modelMapper.map(notificationDomain, NotificationCommandDto.class);
+        log.info("Message sent payload : {}", notificationCommandDto);
+        rabbitTemplate.convertAndSend(notificationCommandExchange, notificationCommandKey, notificationCommandDto);
     }
 }
