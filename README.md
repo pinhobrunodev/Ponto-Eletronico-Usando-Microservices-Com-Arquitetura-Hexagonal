@@ -46,9 +46,11 @@ Foram utilizados soluções de consumo e publicação de mensagens em broker de 
 
 
 ### Email Microservice :
+ 
+ ![em](https://user-images.githubusercontent.com/60756219/152559659-0564f77c-094c-4a21-becd-64c6e169f005.png)
 
 
-![email](https://user-images.githubusercontent.com/60756219/152558564-ef51d561-0911-4f15-a5a9-858cef623263.png)
+
 
 
  #
