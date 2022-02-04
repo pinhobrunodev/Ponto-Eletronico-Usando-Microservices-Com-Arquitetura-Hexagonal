@@ -13,10 +13,10 @@ Foram utilizados soluções de consumo e publicação de mensagens em broker de 
 - JavaMail
 - Apache Kafka
 - RabbitMQ
-- Redis
 - ModelMapper
 - Lombok
 - Gson
+- Redis
 - PostgreSQL
 - MongoDB
 - Maven
