@@ -55,6 +55,11 @@ Foram utilizados soluções de consumo e publicação de mensagens em broker de 
 - Registrar um ponto eletronico  ( Post )
  
  <code>http://localhost:8082/attendances/{userId}/attend</code>
+ 
+ - Exemplo de Email que foi enviado para o email do usuário que foi registrado :
+ 
+ ```Olá Fulano Silva, você bateu o ponto no seguinte dia/horário: 04/02/2022 10:33:39```
+ 
 
 ## Veja a seguir como foi feita a Arquitetura Hexagonal dos Microsserviços :
 
