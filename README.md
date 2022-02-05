@@ -21,6 +21,40 @@ Foram utilizados soluções de consumo e publicação de mensagens em broker de 
 - MongoDB
 - Maven
 - Docker
+ 
+
+ 
+## Endpoints 
+ 
+ Observações :
+ 
+ 1-Ainda não foi implementado validações de campo.
+ 
+ 2-Informe um email válido pois será enviado uma notificação para o mesmo.
+ 
+ 3-É necessário alterar as informações do envio de email no <code>application.properties</code> do microsserviço **Email** para o seu email ( Apartir dele  que vai ser feito o envio), além disso vai ser necessário gerar uma <code>key</code> referente ao email informado e coloca-lo no campo <code>spring.mail.password</code> , isso é necessário pois vamos utilizar o protocolo SMTP.Segue o link com o passo a passo para gerar essa senha :
+ 
+ https://support.google.com/accounts/answer/185833
+ 
+ 4-Na classe **NotificationConsumer** do microsserviço **Email**, é necessário alterar o nome do email que foi setado na variável <code>emailDomain</code> para o seu email do item 3.
+ 
+ 
+ - Cadastrar Usuario ( Post )
+ 
+ <code>http://localhost:8081/auth/signup</code>
+ 
+ exemplo de body :
+ 
+         {
+        "firstName":"Fulano",
+        "lastName":"Silva",
+        "email":"iaishowcs@gmail.com",
+        "departmentType":"TECHNOLOGY_DEPARTMENT"
+        }
+ 
+- Registrar um ponto eletronico  ( Post )
+ 
+ <code>http://localhost:8082/attendances/{userId}/attend</code>
 
 ## Veja a seguir como foi feita a Arquitetura Hexagonal dos Microsserviços :
 
