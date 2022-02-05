@@ -38,6 +38,8 @@ Foram utilizados soluções de consumo e publicação de mensagens em broker de 
  
  4-Na classe **NotificationConsumer** do microsserviço **Email**, é necessário alterar o nome do email que foi setado na variável <code>emailDomain</code> para o seu email do item 3.
  
+ 5-Utilize do comando <code>docker-compose up -d</code> para subir os containers.
+ 
  
  - Cadastrar Usuario ( Post )
  
