@@ -48,7 +48,7 @@ Foram utilizados soluções de consumo e publicação de mensagens em broker de 
          {
         "firstName":"Fulano",
         "lastName":"Silva",
-        "email":"iaishowcs@gmail.com",
+        "email":"seuemailvalido@gmail.com",
         "departmentType":"TECHNOLOGY_DEPARTMENT"
         }
  
