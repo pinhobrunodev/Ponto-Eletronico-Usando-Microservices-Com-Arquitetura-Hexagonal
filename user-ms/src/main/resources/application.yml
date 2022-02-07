@@ -1,37 +1,5 @@
 server:
   port: 8081
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5434/user-db
-    username: postgres
-    password: 123
-  jpa:
-    hibernate:
-      ddl-auto: update
-      dialect: org.hibernate.dialect.PostgreSQLDialect
-      jdbc:
-        lob.non-contextual-creation:true
-    properties:
-      hibernate:
-        show_sql: true
-    output:
-      ansi:
-        enabled: always
-  kafka:
-    bootstrap-servers: localhost:29092
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
-topic:
-  name:
-    producer: user-topic
-
-
-  # Log Level of Application
-logging:
-  level:
-    com.pinhobrunodev: TRACE
-    root: INFO # More details but not of Everything
-    org.springframework.web: DEBUG # Log to see into the Requests
-    org.hibernate: INFO  # Log to see the Hibernate
+  profiles:
+    active: test

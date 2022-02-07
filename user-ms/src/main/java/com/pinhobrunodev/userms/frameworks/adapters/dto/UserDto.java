@@ -3,11 +3,13 @@ package com.pinhobrunodev.userms.frameworks.adapters.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.pinhobrunodev.userms.application.domain.enums.DepartmentType;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@AllArgsConstructor
 @Data
 public class UserDto {
 
